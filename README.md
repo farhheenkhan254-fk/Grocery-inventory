@@ -24,9 +24,8 @@ It creates a virtual environment if needed, installs dependencies, and starts th
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-streamlit run app/main.py
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m streamlit run app/main.py
 ```
 
 Then open [http://localhost:8501](http://localhost:8501). No API keys are needed for the demo dashboard.
@@ -42,7 +41,7 @@ Then open [http://localhost:8501](http://localhost:8501). No API keys are needed
 5. [Key Business Rules](#4-key-business-rules)
 6. [Slack Integration & Channels](#5-slack-integration--channels)
 7. [Database Design](#6-database-design)
-8. [Live Integrations & CLI Commands](#7-live-integrations--cli-commands)
+8. [Run Commands](#7-run-commands)
 9. [Live Presentation Demo Scenarios](#8-live-presentation-demo-scenarios)
 10. [Slack App Setup (Live Mode)](#9-slack-app-setup-live-mode)
 11. [Test Suite](#10-test-suite)
@@ -227,31 +226,34 @@ The demo seeds 20 grocery products (including grains, pulses, spices, beverages,
 
 ---
 
-## 7. Live Integrations & CLI Commands
+## 7. Run Commands
 
-### Step 1: Start the Slack Bot Listener (Terminal 1)
-Open a terminal in the project directory and run:
+Run these commands from the project root in **PowerShell**. If you used `run.bat`, it already installed the dependencies.
+
+### Start the dashboard
+
 ```powershell
-python run_slack.py
+.\.venv\Scripts\python.exe -m streamlit run app/main.py
 ```
-*Output will confirm: Connected to Slack via Socket Mode, listening for interactive buttons and slash commands.*
 
-### Step 2: Start the Streamlit Dashboard (Terminal 2)
-Open a second terminal in the project directory and run:
+Open [http://localhost:8501](http://localhost:8501). Press **Ctrl+C** in the terminal to stop it.
+
+### Run a demo scenario without the dashboard
+
 ```powershell
-streamlit run app/main.py
+.\.venv\Scripts\python.exe app/main.py --scenario 1
+.\.venv\Scripts\python.exe app/main.py --scenario 2
 ```
-*Browser opens at `http://localhost:8501`.*
 
-### Step 3 (Optional): Run Headless CLI Simulation
-If presenting without a browser UI:
+### Start the Slack bot (optional)
+
+First configure `SLACK_BOT_TOKEN` and `SLACK_APP_TOKEN` in `.env` as described in [Slack App Setup](#9-slack-app-setup-live-mode). Then, in a **second PowerShell window**:
+
 ```powershell
-# Run Scenario 1 (Full Restocking Lifecycle)
-python app/main.py --scenario 1
-
-# Run Scenario 2 (Supplier Out of Stock Handling)
-python app/main.py --scenario 2
+.\.venv\Scripts\python.exe run_slack.py
 ```
+
+Keep the Slack bot and dashboard running in separate terminals when using the live Slack integration.
 
 ---
 
@@ -402,7 +404,7 @@ SLACK_SIGNING_SECRET=your-signing-secret
 Run the comprehensive test suite with `pytest`:
 
 ```powershell
-python -m pytest -v
+.\.venv\Scripts\python.exe -m pytest -v
 ```
 
 ### Test Coverage Summary:
