@@ -1,4 +1,4 @@
-# 🛒 Smart Grocery Inventory & Procurement Management System using Agentic AI
+# 🛒 Smart Grocery Inventory & Procurement Management System
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![LangGraph](https://img.shields.io/badge/Orchestration-LangGraph-orange.svg)](https://langchain-ai.github.io/langgraph/)
@@ -7,23 +7,46 @@
 [![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![Pytest](https://img.shields.io/badge/Tests-17%20Passed-brightgreen.svg)](https://pytest.org/)
 
-An enterprise-grade, presentation-ready multi-agent autonomous system for grocery inventory monitoring, replenishment planning, multi-channel Slack communication, human-in-the-loop authorization, and supply chain procurement.
+> A demo-ready grocery inventory and procurement app built with Python, Streamlit, and LangGraph.
+> Track stock, plan replenishment, and manage supplier orders with human approval before purchasing.
+
+The dashboard runs locally with SQLite. Groq, Slack, and email integrations are optional.
+
+## Quick Start for Windows
+
+**Fastest option:** run the included launcher from the project folder:
+
+```powershell
+.\run.bat
+```
+
+It creates a virtual environment if needed, installs dependencies, and starts the dashboard. To run it manually instead:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+streamlit run app/main.py
+```
+
+Then open [http://localhost:8501](http://localhost:8501). No API keys are needed for the demo dashboard.
 
 ---
 
 ## 📋 Table of Contents
 
-1. [System Architecture](#1-system-architecture)
-2. [AI Agents Roster](#2-ai-agents-roster)
-3. [LangGraph StateGraph Workflow](#3-langgraph-stategraph-workflow)
-4. [Key Business Rules](#4-key-business-rules)
-5. [Slack Integration & Channels](#5-slack-integration--channels)
-6. [Database Design](#6-database-design)
-7. [Quick Start & Execution Guide](#7-quick-start--execution-guide)
-8. [Live Presentation Demo Scenarios](#8-live-presentation-demo-scenarios)
-9. [Slack App Setup (Live Mode)](#9-slack-app-setup-live-mode)
-10. [Test Suite](#10-test-suite)
-11. [Project Structure](#11-project-structure)
+1. [Quick Start](#quick-start-for-windows)
+2. [System Architecture](#1-system-architecture)
+3. [AI Agents Roster](#2-ai-agents-roster)
+4. [LangGraph StateGraph Workflow](#3-langgraph-stategraph-workflow)
+5. [Key Business Rules](#4-key-business-rules)
+6. [Slack Integration & Channels](#5-slack-integration--channels)
+7. [Database Design](#6-database-design)
+8. [Live Integrations & CLI Commands](#7-live-integrations--cli-commands)
+9. [Live Presentation Demo Scenarios](#8-live-presentation-demo-scenarios)
+10. [Slack App Setup (Live Mode)](#9-slack-app-setup-live-mode)
+11. [Test Suite](#10-test-suite)
+12. [Project Structure](#11-project-structure)
 
 ---
 
@@ -204,7 +227,7 @@ The demo seeds 20 grocery products (including grains, pulses, spices, beverages,
 
 ---
 
-## 7. Quick Start & Execution Commands
+## 7. Live Integrations & CLI Commands
 
 ### Step 1: Start the Slack Bot Listener (Terminal 1)
 Open a terminal in the project directory and run:
@@ -463,5 +486,3 @@ smart_grocery_agent/
 ├── run.bat                         # One-click Windows runner
 └── app.py                          # Root proxy runner
 ```
-#   G r o c e r y - i n v e n t o r y  
- 
