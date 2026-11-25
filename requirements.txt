@@ -1,0 +1,26 @@
+# Smart Grocery Inventory & Procurement Management System
+# Core Agentic AI & Graph Orchestration
+langchain>=1.5.0
+langgraph>=1.2.20
+langchain-groq>=1.2.0
+groq>=1.7.0
+
+# Slack Bolt & SDK
+slack-bolt>=1.20.0
+slack-sdk>=3.27.0
+
+# Database & ORM
+SQLAlchemy>=2.0.30
+PyMySQL>=1.1.0
+
+# Scheduling & Utilities
+APScheduler>=3.10.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.0
+python-dotenv>=1.0.0
+
+# UI & Presentation Dashboard
+streamlit>=1.35.0
+
+# Testing
+pytest>=8.0.0
