@@ -34,7 +34,7 @@ def run_cli_scenario(scenario_number: int):
     Executes presentation scenarios directly in the CLI terminal.
     """
     print("=" * 70)
-    print("🛒 SMART GROCERY INVENTORY & PROCUREMENT MANAGEMENT SYSTEM")
+    print("SMART GROCERY INVENTORY & PROCUREMENT MANAGEMENT SYSTEM")
     print("   Agentic AI • LangGraph • Multi-Agent Collaboration • Slack API")
     print("=" * 70)
 
